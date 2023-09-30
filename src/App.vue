@@ -63,6 +63,12 @@ export default {
       setTimeout(() => {
         this.currentFloor = floor
       }, this.duration)
+      localStorage.currentFloor = this.currentFloor
+    }
+  },
+  mounted() {
+    if (localStorage.currentFloor){
+      this.currentFloor = localStorage.currentFloor
     }
   }
 }
