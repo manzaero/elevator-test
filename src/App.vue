@@ -3,8 +3,14 @@
     <div class="elevator">
 
     </div>
-    <div class="floor">
-      <button>#</button>
+    <div
+        class="floor"
+        v-for="(item, index) in floors"
+        :key="index"
+    >
+      <button
+        @click="moveTo(item.id)"
+      ># {{item.title}}</button>
       <p></p>
     </div>
   </div>
@@ -12,7 +18,41 @@
 
 <script>
 export default {
-
+  data(){
+    return {
+      currentFloor: 0,
+      floors:[
+        {
+          id: 0,
+          title: '1 - этаж'
+        },
+        {
+          id: 1,
+          title: '2 - этаж'
+        },
+        {
+          id: 2,
+          title: '3 - этаж'
+        },
+        {
+          id: 3,
+          title: '4 - этаж'
+        },
+        {
+          id: 4,
+          title: '5 - этаж'
+        }
+      ]
+    }
+  },
+  methods:{
+    moveTo(floor){
+      this.currentFloor = floor
+      setTimeout(() => {
+        this.currentFloor = floor
+      }, 1000)
+    }
+  }
 }
 </script>
 
@@ -25,11 +65,23 @@ export default {
     margin-left: 120px;
   }
   button {
-    width: 20px;
+    margin-top: 40px;
+    width: 100px;
     height: 20px;
     border: 1px solid #1ff;
   }
-
+  .floor {
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #faaf45;
+  }
+  .elevator {
+    top: 0;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #f35;
+  }
 }
 
 /* Reset and base styles  */
