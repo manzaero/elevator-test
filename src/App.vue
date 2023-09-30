@@ -1,6 +1,9 @@
 <template>
   <div class="building">
-    <div class="elevator">
+    <div
+        class="elevator"
+        :style="currentMove"
+    >
 
     </div>
     <div
@@ -43,6 +46,13 @@ export default {
           title: '5 - этаж'
         }
       ]
+    }
+  },
+  computed:{
+    currentMove(){
+      return {
+        top: `${this.currentFloor * 100}px`,
+      }
     }
   },
   methods:{
