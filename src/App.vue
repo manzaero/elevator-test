@@ -45,13 +45,15 @@ export default {
           id: 4,
           title: '5 - этаж'
         }
-      ]
+      ],
+      duration: 1000
     }
   },
   computed:{
     currentMove(){
       return {
         top: `${this.currentFloor * 100}px`,
+        transition: `top ${this.duration / 1000}s`
       }
     }
   },
@@ -60,7 +62,7 @@ export default {
       this.currentFloor = floor
       setTimeout(() => {
         this.currentFloor = floor
-      }, 1000)
+      }, this.duration)
     }
   }
 }
