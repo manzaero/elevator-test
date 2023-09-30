@@ -4,7 +4,9 @@
         class="elevator"
         :style="currentMove"
     >
-
+      <div class="elevator_number">
+        <p>{{+this.currentFloor + 1}}</p>
+      </div>
     </div>
     <div
         class="floor"
@@ -99,6 +101,10 @@ export default {
     width: 100px;
     height: 100px;
     background-color: #f35;
+    &_number {
+      margin-left: -70px;
+      margin-top: 20px;
+    }
   }
 }
 
