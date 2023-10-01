@@ -4,9 +4,9 @@
         class="elevator"
         :style="currentMove"
     >
-      <div class="elevator_number">
-        <p>{{+this.currentFloor + 1}}</p>
-      </div>
+      <the-elevator
+        :elevator="+this.currentFloor + 1"
+      />
     </div>
     <div
         class="floor"
@@ -22,7 +22,9 @@
 </template>
 
 <script>
+import TheElevator from "@/components/TheElevator";
 export default {
+  components: {TheElevator},
   data(){
     return {
       currentFloor: 0,
@@ -76,7 +78,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .building {
   position: relative;
