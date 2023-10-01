@@ -19,6 +19,12 @@ npm run build
 ```
 npm run lint
 ```
+### elevator-vue
+5 этажей - в app.vue;
+1 лифт - компонент;
+реализовано localStorage;
+изменение этажа на лифте в движении;
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
